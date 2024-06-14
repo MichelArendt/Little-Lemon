@@ -328,3 +328,10 @@ button:active {
   background: var(--color-primary-1);
   border-image: conic-gradient(var(--color-primary-1) 0 0) fill 0/0/0 100vw;
 }
+
+.form__input-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background: red;
+}

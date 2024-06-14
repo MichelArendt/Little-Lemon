@@ -22,7 +22,8 @@ function Button({url, value, fnc}) {
 
 Button.propTypes = {
     url: PropTypes.string,
-    value: PropTypes.string
+    value: PropTypes.string,
+    fnc: PropTypes.func
 }
 
 export default Button;
