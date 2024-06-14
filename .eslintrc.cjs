@@ -13,6 +13,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     "no-unused-vars": "warn",
+    "react/no-unescaped-entities": disable,
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [
       'warn',
