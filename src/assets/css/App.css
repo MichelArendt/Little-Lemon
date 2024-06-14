@@ -34,13 +34,7 @@
 .color-highlight-2 { color: #333333; }
 
 /* FONT: Markazi */
-.font__markazi {
-  font-family: "Markazi Text", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.text--display_title, .text--display-subtitle {
+.font__markazi, .text--display_title, .text--display-subtitle {
   font-family: "Markazi Text", serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -57,7 +51,7 @@
 }
 
 /* FONT: Karla */
-.text--lead, .text--section-title, .text--section-categories, .text--card-title, .text--card-paragraph {
+.font__karla, .text--lead, .text--section-title, .text--section-categories, .text--card-title, .text--card-paragraph {
   font-family: "Karla", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -326,4 +320,11 @@ button:active {
   background-color: var(--color-primary-2);
   outline-color: var(--color-primary-2);
   outline-style: dotted;
+}
+
+.page__title {
+  padding: 50px 0;
+  text-align: center;
+  background: var(--color-primary-1);
+  border-image: conic-gradient(var(--color-primary-1) 0 0) fill 0/0/0 100vw;
 }

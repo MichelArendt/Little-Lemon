@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 import '../assets/css/components/Card.css';
-import svg from '../assets/imgs/svg/basket.svg'
 
 function Card({image, title, price, description}) {
     return(
@@ -13,7 +12,12 @@ function Card({image, title, price, description}) {
                     <p className='font__markazi color-secondary-1'>{price}</p>
                 </div>
                 <p className='text--card-paragraph'>{description}</p>
-                <Link to='#'>Order a Delivery <img src={svg} height='20px' width='20px' /> </Link>
+                <Link to='#' className='card-content__container-link'>
+                    <p className='font__karla'>Order a Delivery</p>
+                    <span className="material-symbols-outlined">
+                        shopping_cart_checkout
+                    </span>
+                </Link>
             </div>
         </div>
     );

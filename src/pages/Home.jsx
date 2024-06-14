@@ -1,9 +1,15 @@
 import '../assets/css/Homepage.css'
+
 import image from '../assets/imgs/restaurant/restaurant.jpg'
-import image_greekSalad from '../assets/imgs/food/greek_salad.jpg'
+import image_greekSalad from '../assets/imgs/food/greek_salad-card.png'
+import image_bruschetta from '../assets/imgs/food/bruschetta-card.png'
+import image_lemonDessert from '../assets/imgs/food/lemon_dessert-card.png'
+import image_restaurantChef from '../assets/imgs/restaurant/restaurant_chef.jpg'
+import image_marioAndAdrian from '../assets/imgs/restaurant/Mario_and_Adrian.jpg'
+
 import Button from '../components/Button'
 import Card from '../components/Card'
-import { Link } from 'react-router-dom'
+import Testimonial from '../components/Testimonial'
 
 export default function Main() {
     return (
@@ -29,8 +35,8 @@ export default function Main() {
                 <Button url={'#'} value={'Online Menu'} />
 
                 <section>
-                    <Card 
-                        image={image_greekSalad} 
+                    <Card
+                        image={image_greekSalad}
                         title={'Greek Salad'}
                         price={'$12.99'}
                         description={'The famous greek salad of crispy lettuce, peppers, olives and out Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.'}
@@ -38,12 +44,72 @@ export default function Main() {
                 </section>
 
                 <section>
-                    Bruschetta
+                    <Card
+                        image={image_bruschetta}
+                        title={'Bruschetta'}
+                        price={'$5.99'}
+                        description={'Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.'}
+                    />
                 </section>
 
                 <section>
-                    Lemon Dessert
+                    <Card
+                        image={image_lemonDessert}
+                        title={'Lemon Dessert'}
+                        price={'$5.00'}
+                        description={'This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.'}
+                    />
                 </section>
+            </article>
+
+            <article className='homepage__section-testimonials'>
+                <h1 className='text--section-title color-primary-2'>Testimonials</h1>
+
+                <div className='testimonials-container'>
+                    <Testimonial
+                        name='Pedro'
+                        stars='5'
+                        comment='Absolutely loved the ambiance and the flavors at Little Lemon! A delightful dining experience!'
+                    />
+
+                    <Testimonial
+                        name='Amanda'
+                        stars='4'
+                        comment='Great food and service. Little Lemon is a wonderful spot for a nice meal.'
+                    />
+
+                    <Testimonial
+                        name='Carla'
+                        stars='3'
+                        comment='Decent food and atmosphere, but a bit overpriced. Still enjoyed the evening at Little Lemon.'
+                    />
+
+                    <Testimonial
+                        name='Yasmin'
+                        stars='5'
+                        comment="An unforgettable culinary journey. Little Lemon's menu is both innovative and delicious!"
+                    />
+                </div>
+            </article>
+
+            <article className='homepage__section-about'>
+                <h1 className='text--display-title color-primary-1'>Little Lemon</h1>
+                <h2 className='text--display-subtitle color-primary-2'>Chigaco</h2>
+                <p className='text--lead'>
+                    We are a family-owned Mediterranean restaurant, dedicated to bringing the rich and diverse flavors of the Mediterranean to your table.<br /><br />
+
+                    Our focus is on preserving the authenticity of traditional recipes while infusing them with a modern twist to delight your palate.<br /><br />
+
+                    From savory mezze platters to succulent grilled meats and fresh seafood, every dish is crafted with the finest ingredients and utmost care.<br /><br />
+
+                    Our warm and inviting atmosphere is perfect for family gatherings, romantic dinners, and casual outings alike.<br /><br />
+
+                    At Little Lemon, we strive to create an unforgettable dining experience that blends the best of tradition and innovation.
+                </p>
+                <div className='about__container-image'>
+                    <img src={image_marioAndAdrian} />
+                    <img src={image_restaurantChef} />
+                </div>
             </article>
         </>
     )

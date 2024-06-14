@@ -1,0 +1,42 @@
+.testimonial {
+    display: grid;
+    grid-template-areas:    "avatar name"
+                            "avatar stars"
+                            "comment comment";
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    padding: 40px;
+    width: 25%;
+    background: var(--color-highlight-1);
+    text-align: left;
+    align-items: center;
+
+    > img {
+        grid-area: avatar;
+        filter: drop-shadow(0 0 0.2rem var(--color-primary-1));
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    > h1 {
+        padding-top: 15px;
+    }
+
+    > p {
+        grid-area: comment;
+    }
+}
+
+.testimonial__star-yellow, .testimonial__star-grey {
+    text-shadow: var(--color-primary-1) 1px 0 10px;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.testimonial__star-yellow {
+    color: yellow;
+}
+
+.testimonial__star-grey {
+    color: var(--color-highlight-1);
+}
