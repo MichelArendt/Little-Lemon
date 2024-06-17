@@ -4,6 +4,9 @@ export default class ReservationUtil {
     dateSelected = new Date();
     timeSelected = "18:00";
     guestsSelected = 1;
+    firstName = '';
+    lastName = '';
+    email = '';
 
     /**
     * Initializes with reservations enabled from current day until specification. E.g.: from today up to 7 days.
