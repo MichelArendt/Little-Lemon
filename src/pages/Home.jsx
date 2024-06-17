@@ -21,7 +21,7 @@ export default function Main() {
                     <div>
                         <p className='text--lead color-highlight-1'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. </p>
                     </div>
-                    <Button url={'/reservations'} value={'Reserve a table'} />
+                    <Button url={'/reservations'}>Reserve a table</Button>
                 </section>
 
                 <img src={image} alt='Little Lemon restaurant'  />
@@ -32,7 +32,7 @@ export default function Main() {
                     This week's special!
                 </h1>
 
-                <Button url={'#'} value={'Online Menu'} />
+                <Button url={'#'}>Online Menu</Button>
 
                 <section>
                     <Card

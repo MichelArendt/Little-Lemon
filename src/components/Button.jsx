@@ -2,22 +2,14 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
 
-function Button({url, value, fnc}) {
+function Button({url, fnc, children}) {
     const navigate = useNavigate();
 
     if (fnc){
-        return (<button onClick={fnc}>{value}</button>);
+        return (<button onClick={fnc}>{children}</button>);
     } else {
-        return(<button onClick={() => navigate(url)}>{value}</button>);
+        return(<button onClick={() => navigate(url)}>{children}</button>);
     }
-
-    // return (
-    //     {
-    //         if ( onClick ) {
-    //             return
-    //         }
-    //     }
-    // );
 }
 
 Button.propTypes = {

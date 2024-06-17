@@ -62,6 +62,11 @@
   font-size: 18px;
 }
 
+.text--lead-highlight {
+  font-weight: var(--font-extra-bold);
+  font-size: 24px;
+}
+
 .text--section-title {
   font-weight: var(--font-extra-bold);
   font-size: 20px;
@@ -333,5 +338,34 @@ button:active {
   display: flex;
   flex-direction: column;
   width: 300px;
-  background: red;
+  padding: 30px 0;
+}
+
+.form__submit-container {
+  padding: 30px 0;
+}
+
+select, input[type=date] {
+  border: 2px solid var(--color-primary-1);
+  border-radius: 16px;
+  padding: 10px;
+  background: var(--color-highlight-1);
+  color: var(--color-primary-1);
+  transition: all linear 0.2s;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 10px;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"%3E%3Cpath fill="%23000" d="M2 0L0 2h4zm0 5L0 3h4z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position the arrow */
+  background-size: 8px 10px; /* Size of the arrow */
+  transition: all linear 0.2s;
+}
+
+select:hover, input[type=date]:hover {
+  border: 2px solid var(--color-primary-2);
 }
