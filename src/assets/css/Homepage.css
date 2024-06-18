@@ -1,4 +1,16 @@
 .homepage__section-hero {
+    display: grid;
+    gap: 20px;
+    background-color: var(--color-primary-1);
+    padding: 50px 20px;
+
+    > img {
+        width: 100%;
+        border-radius: 10%;
+    }
+}
+
+/* .homepage__section-hero {
     display: flex;
     background-color: var(--color-primary-1);
     border-image: conic-gradient(var(--color-primary-1) 0 0) fill 0/0/0 100vw;
@@ -26,9 +38,7 @@
     }
 
     img {
-        flex-shrink: 0;
         border-radius: 10%;
-        height: 150%;
     }
 }
 
@@ -99,4 +109,4 @@
         top: 50%;
         right: 100px;
     }
-}
+} */

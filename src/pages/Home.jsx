@@ -18,8 +18,8 @@ export default function Main() {
                 <section>
                     <h1 className='text--display-title color-primary-2'>Little Lemon</h1>
                     <h2 className='text--display-subtitle color-highlight-1'>Chigaco</h2>
-                    <div>
-                        <p className='text--lead color-highlight-1'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist. </p>
+                    <div className='padding-vertical'>
+                        <p className='text--lead color-highlight-1'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                     </div>
                     <Button url={'/reservations'}>Reserve a table</Button>
                 </section>

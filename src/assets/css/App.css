@@ -118,18 +118,25 @@ body {
 
 .container {
   display: grid;
-  grid: 120px auto fit-content(500px) / repeat(12, 1fr);
-  /* margin: 0px 50px;
-  width: calc(100vw - 100px); */
-  padding: 0px 50px;
+  grid: 100px auto fit-content(500px) / repeat(12, 1fr);
   height: 100%;
+  width: 100%;
 
   > * {
-    grid-column: 3 / span 8;
+    grid-column: 1 / span 12;
   }
 }
 
-header {
+.padding-vertical {
+  padding: 20px 0;
+}
+
+main {
+  grid-row: 2;
+}
+
+
+/* header {
   grid-row: 1;
   display: flex;
 
@@ -296,7 +303,7 @@ footer {
   a:hover::after {
     transform: translateX(0);
   }
-}
+} */
 
 button {
   position: relative;

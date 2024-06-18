@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 
-import logoVertical from '../assets/imgs/logo-vertical.png'
+import '@/assets/css/components/Footer.css'
+
+import logoVertical from '@/assets/imgs/logo-vertical.png'
 
 export default function Footer() {
     return (
         <footer>
-            <article style={ {justifyContent: 'center'} }>
+            <article className="footer__logo-container">
                 <img src={logoVertical} height='350px' />
             </article>
 
