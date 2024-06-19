@@ -337,7 +337,6 @@ button:active {
 
 .page__title {
   padding: 50px 0;
-  margin-bottom: 30px;
   text-align: center;
   background: var(--color-primary-1);
   border-image: conic-gradient(var(--color-primary-1) 0 0) fill 0/0/0 100vw;

@@ -10,15 +10,10 @@ import ReservationConfirm from "@/components/reservation/ReservationConfirm";
 const ReservationContext = createContext(undefined)
 
 export default function Reservations() {
-    const [step, setStep] = useState(2);
-    // const [reservation, setReservation] = useState(new ReservationUtil(7));
-
-    // const reservation = new ReservationUtil(7);
+    const [step, setStep] = useState(1);
 
     return (
         <>
-            {/* <ReservationContext value={reservation}>
-            </ReservationContext> */}
             <ReservationProvider>
                 {
                     
@@ -27,10 +22,6 @@ export default function Reservations() {
                         2: <Reservation_Step2 setStep={setStep} />
                     }[step]
                     || <Reservation_Step1 setStep={setStep} />
-
-                    // step == 1 ?
-                    // <Reservation_Step1 setStep={setStep} /> :
-                    // <Reservation_Step2 setStep={setStep} />
                 }
             </ReservationProvider>
         </>

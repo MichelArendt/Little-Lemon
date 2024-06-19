@@ -55,7 +55,7 @@ export default function Reservation_Step2 ({setStep}) {
                 </section>
 
                 <p>
-                    Below are your reservation details:
+                We can accommodate you and your guests! Below are the reservation details you've specified so far:
                 </p>
                 <ul className="reservation-list">
                     <li>Date: <strong>{reservation.dateSelectedToDisplayText()}</strong></li>
@@ -76,6 +76,7 @@ export default function Reservation_Step2 ({setStep}) {
                         reservation.email = values.email;
                         console.log('email: ' + reservation.email);
                         setStep(3);
+                        window.scrollTo(0, 0);
                     }}
                 >
                     {({ errors, touched, isValidating }) => (

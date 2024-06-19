@@ -4,7 +4,7 @@ import { useReservation } from "./ReservationContext";
 import Button from '../Button'
 
 export default function Reservation_Step1 ({setStep}) {
-    const [ loading, setLoading ] = useState(false);
+    // const [ loading, setLoading ] = useState(false);
     const { reservation, setReservation } = useReservation();
 
     // Use local states to trigger re-render when values change
@@ -39,30 +39,9 @@ export default function Reservation_Step1 ({setStep}) {
     }
 
     const checkAvailability = (e) => {
-        setLoading(true);
+        setStep(2);
+        window.scrollTo(0, 0);
     }
-
-    useEffect(() => {
-        let timer;
-        if (loading) {
-            console.log('timer began');
-
-            // Set a timeout to run after 5 seconds
-            timer = setTimeout(() => {
-                console.log('timer ended');
-                setLoading(false);
-                setStep(2);
-            }, 2000);
-        }
-
-        // Cleanup function to clear the timeout
-        return () => {
-            if (timer) {
-                clearTimeout(timer);
-                console.log('timer cleared');
-            }
-        };
-    }, [loading]); // Dependency array
 
     return(
         <>
