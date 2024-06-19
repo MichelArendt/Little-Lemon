@@ -9,8 +9,40 @@
     }
 }
 
+@media screen and (min-width: 700px) {
+    .homepage__section-hero, .homepage__section-weeks_specials {
+        grid: auto / 1fr 1fr;
+
+        img {
+            align-self: center;
+        }
+    }
+
+    .homepage__section-hero {
+        section {
+            display: flex;
+            flex-direction: column;
+
+            div {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .homepage__section-weeks_specials {
+        grid: auto auto / 1fr 1fr 1fr;
+
+        :first-child {
+            grid-column: 1 / span 2;
+        }
+    }
+}
+
 .homepage__section-hero {
     background-color: var(--color-primary-1);
+    border-image: conic-gradient(var(--color-primary-1) 0 0) fill 0/0/0 100vw;
 }
 
 .homepage__section-testimonials {
@@ -46,34 +78,65 @@
         width: 100%;
         padding: 10px;
         filter: drop-shadow(-2px 2px 2px var(--color-primary-1));
-        /* position: absolute; */
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .homepage__section-about {
+        display: grid;
+        grid-template: repeat(12, auto) / repeat(12, auto);
+        gap: 20px
     }
 
-    /* :first-child {
-        bottom: 15%;
-        right: 0;
+    .about__container-text {
+        grid-row: 1 / span 12;
+        grid-column: 1 / span 6;
+
+        > p {
+            line-height: 150%;
+        }
     }
 
-    :last-child {
-        top: 50%;
-        right: 100px;
-    } */
-
-    /* > * {
-        filter: drop-shadow(-5px -5px 5px var(--color-primary-1));
-        position: absolute;
-        height: 40%;
+    .about__container-image {
+        grid-row: 1 / span 12;
+        grid-column: 7 / span 6;
     }
 
-    :first-child {
-        top: 15%;
-        right: 0;
+    .testimonials-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        padding: 20px;
+
+        > * {
+            flex: 1 1 0px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .about__container-text {
+        grid-row: 1 / span 12;
+        grid-column: 1 / 7;
+
+        > p {
+            line-height: 150%;
+        }
     }
 
-    :last-child {
-        top: 50%;
-        right: 100px;
-    } */
+    .about__container-image {
+        grid-row: 1 / span 12;
+        grid-column: 8 / 12;
+    }
+
+    .testimonials-container {
+        gap: 40px;
+        padding: 40px;
+
+        > * {
+            flex: 1 1 0px;
+        }
+    }
 }
 
 /* .homepage__section-hero {

@@ -21,7 +21,8 @@ export default function Header() {
       }, [menuState]);
 
     const handleScroll = () => {
-        if (localMenuStateRef.current === MenuState.DEFAULT) {
+        // second comparison is to disable hide/show menu behavior past 1000 width
+        if (localMenuStateRef.current === MenuState.DEFAULT && document.body.clientWidth < 1000) {
             var currentScrollPos = window.scrollY;
             if (prevScrollpos > currentScrollPos) {
                 // scroll down
@@ -44,6 +45,18 @@ export default function Header() {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+
+    const handleResize = () => {
+        localMenuStateRef.current == MenuState.DEFAULT ? setMenuState(MenuState.DEFAULT) : setMenuState(MenuState.OPEN) ;
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     return(
         <header ref={headerRef}>

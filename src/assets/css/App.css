@@ -135,6 +135,24 @@ main {
   grid-row: 2;
 }
 
+@media screen and (min-width: 1000px) {
+  #root {
+    display: flex;
+
+    > :first-child {
+      flex-grow: 1;
+    }
+
+    > :last-child {
+      flex-grow: 1;
+    }
+  }
+  
+  .container {
+    width: 1200px;
+  }
+}
+
 
 /* header {
   grid-row: 1;

@@ -1,10 +1,16 @@
 .card {
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-highlight-1);
     color: var(--color-primary-1);
     border-radius: 16px;
+    height: 100%;
 }
 
 .card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     padding: 20px;
 
     > p {

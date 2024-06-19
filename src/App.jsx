@@ -3,13 +3,14 @@ import './assets/css/App.css'
 import Footer from './components/Footer'
 import Header from './components/header/Header'
 
-import Home from './pages/Home'
+import Home from './pages/Homepage'
 import Reservations from "./pages/Reservations";
 import { HeaderProvider } from "@/components/header/HeaderContext";
 
 export default function App() {
   return (
     <>
+      <span></span>
       <div className='container'>
         <HeaderProvider>
           <Header />
@@ -22,6 +23,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <span></span>
     </>
   )
 }

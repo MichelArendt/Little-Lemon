@@ -15,20 +15,32 @@ export default function Nav(){
     const menuButton = useRef(null);
     const menuLinks = useRef(null);
 
-    const toggleMenu = () => {
-        switch(menuState)
-        {
-            case MenuState.OPEN:
-                setMenuState(MenuState.DEFAULT);
-                setMenuLinksClass(MenuLinksClass.HIDDEN);
-                menuButton.current.innerText = 'menu';
-                break;
+    const setMenuOpen = () => {
+        setMenuState(MenuState.OPEN);
+        setMenuLinksClass(MenuLinksClass.VISIBLE);
+        menuButton.current.innerText = 'menu_open';
+        console.log('setMenuOpen')
+    }
 
-            default:
-                setMenuState(MenuState.OPEN);
-                setMenuLinksClass(MenuLinksClass.VISIBLE);
-                menuButton.current.innerText = 'menu_open';
-                break;
+    const setMenuDefault = () => {
+        setMenuState(MenuState.DEFAULT);
+        setMenuLinksClass(MenuLinksClass.HIDDEN);
+        menuButton.current.innerText = 'menu';
+        console.log('setMenuDefault')
+    }
+
+    const toggleMenu = () => {
+        if(document.body.clientWidth < 1000) {
+            switch(menuState)
+            {
+                case MenuState.OPEN:
+                    setMenuDefault();
+                    break;
+
+                default:
+                    setMenuOpen();
+                    break;
+            }
         }
     }
 
@@ -52,6 +64,17 @@ export default function Nav(){
         window.removeEventListener('scroll', toggleScroll);
       };
     }, [menuState]);
+
+    useEffect(() => {
+        if(document.body.clientWidth > 1000) {
+            setMenuLinksClass('');
+        }
+
+        // window.addEventListener('resize', handleResize);
+        // return () => {
+        //   window.removeEventListener('resize', handleResize);
+        // };
+    }, []);
 
     return (
         <>

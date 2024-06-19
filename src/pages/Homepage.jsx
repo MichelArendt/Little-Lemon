@@ -93,19 +93,21 @@ export default function Main() {
             </article>
 
             <article className='homepage__section-about'>
-                <h1 className='text--display-title color-primary-1'>Little Lemon</h1>
-                <h2 className='text--display-subtitle color-primary-2'>Chigaco</h2>
-                <p className='text--lead'>
-                    We are a family-owned Mediterranean restaurant, dedicated to bringing the rich and diverse flavors of the Mediterranean to your table.<br /><br />
+                <div className='about__container-text'>
+                    <h1 className='text--display-title color-primary-1'>Little Lemon</h1>
+                    <h2 className='text--display-subtitle color-primary-2'>Chigaco</h2>
+                    <p className='text--lead'>
+                        We are a family-owned Mediterranean restaurant, dedicated to bringing the rich and diverse flavors of the Mediterranean to your table.<br /><br />
 
-                    Our focus is on preserving the authenticity of traditional recipes while infusing them with a modern twist to delight your palate.<br /><br />
+                        Our focus is on preserving the authenticity of traditional recipes while infusing them with a modern twist to delight your palate.<br /><br />
 
-                    From savory mezze platters to succulent grilled meats and fresh seafood, every dish is crafted with the finest ingredients and utmost care.<br /><br />
+                        From savory mezze platters to succulent grilled meats and fresh seafood, every dish is crafted with the finest ingredients and utmost care.<br /><br />
 
-                    Our warm and inviting atmosphere is perfect for family gatherings, romantic dinners, and casual outings alike.<br /><br />
+                        Our warm and inviting atmosphere is perfect for family gatherings, romantic dinners, and casual outings alike.<br /><br />
 
-                    At Little Lemon, we strive to create an unforgettable dining experience that blends the best of tradition and innovation.
-                </p>
+                        At Little Lemon, we strive to create an unforgettable dining experience that blends the best of tradition and innovation.
+                    </p>
+                </div>
                 <div className='about__container-image'>
                     <img src={image_marioAndAdrian} />
                     <img src={image_restaurantChef} />

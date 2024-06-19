@@ -3,12 +3,13 @@ footer {
     display: flex;
     flex-wrap: wrap;
     background: var(--color-highlight-1);
-    padding: 20px;
+    border-image: conic-gradient(var(--color-highlight-1) 0 0) fill 0/0/0 100vw;
+    padding: 50px;
+    padding-top: 100px;
     gap: 50px;
 
     > article {
         padding-bottom: 20px;
-        /* background-color: red; */
     }
 
     ul {
@@ -92,4 +93,20 @@ footer {
 
 .footer__logo-container {
     display: none;
+}
+
+@media screen and (min-width: 550px) {
+    footer {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    footer {
+        gap: 100px;
+    }
+
+    .footer__logo-container {
+        display: block;
+    }
 }
