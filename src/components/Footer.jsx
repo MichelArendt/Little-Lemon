@@ -6,7 +6,7 @@ import logoVertical from '@/assets/imgs/logo-vertical.png'
 
 export default function Footer() {
     return (
-        <footer>
+        <footer role="contentinfo">
             <article className="footer__logo-container">
                 <img src={logoVertical} height='350px' />
             </article>
@@ -17,11 +17,11 @@ export default function Footer() {
                 <section className='text--section-categories'>
                     <ul>
                         <li><Link to='/'>Home</Link></li>
-                        <li className="footer__link-disabled">About</li>
-                        <li className="footer__link-disabled">Menu</li>
-                        <li><Link to='/reservations'>Reservations</Link></li>
-                        <li className="footer__link-disabled">Order Online</li>
-                        <li className="footer__link-disabled">Login</li>
+                        <li className="footer__link-disabled" role="button" aria-label="About">About</li>
+                        <li className="footer__link-disabled" role="button" aria-label="Menu">Menu</li>
+                        <li><Link to='/reservations' role="button" aria-label="Reservations">Reservations</Link></li>
+                        <li className="footer__link-disabled" role="button" aria-label="Order Online">Order Online</li>
+                        <li className="footer__link-disabled" role="button" aria-label="Login">Login</li>
                     </ul>
                 </section>
             </article>
@@ -43,9 +43,9 @@ export default function Footer() {
 
                 <section className='text--section-categories'>
                     <ul>
-                        <li><Link to='https://facebook.com' target="_blank">Facebook</Link></li>
-                        <li><Link to='https://instagram.com' target="_blank">Instagram</Link></li>
-                        <li><Link to='https://x.com' target="_blank">X</Link></li>
+                        <li><Link to='https://facebook.com' target="_blank" role="button" aria-label="Facebook">Facebook</Link></li>
+                        <li><Link to='https://instagram.com' target="_blank" role="button" aria-label="Instagram">Instagram</Link></li>
+                        <li><Link to='https://x.com' target="_blank" role="button" aria-label="X">X</Link></li>
                     </ul>
                 </section>
             </article>

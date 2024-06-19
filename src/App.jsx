@@ -15,7 +15,7 @@ export default function App() {
         <HeaderProvider>
           <Header />
         </HeaderProvider>
-        <main>
+        <main role="main">
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/reservations" element={<Reservations />}></Route>

@@ -59,7 +59,7 @@ export default function Header() {
 
 
     return(
-        <header ref={headerRef}>
+        <header ref={headerRef} role="banner">
             <Link to={'/'}><img className="logo" src={logo} /></Link>
             <Nav />
         </header>

@@ -6,9 +6,9 @@ function Button({url, fnc, children}) {
     const navigate = useNavigate();
 
     if (fnc){
-        return (<button onClick={fnc}>{children}</button>);
+        return (<button onClick={fnc} aria-label={`${children}`}>{children}</button>);
     } else {
-        return(<button onClick={() => navigate(url)}>{children}</button>);
+        return(<button onClick={() => navigate(url)} aria-label={`${children}`}>{children}</button>);
     }
 }
 
