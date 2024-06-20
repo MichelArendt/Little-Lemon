@@ -341,16 +341,22 @@ button {
   transition: all ease-in .2s;
 }
 
-button:hover {
+button:hover:enabled {
   background-color: var(--color-secondary-1);
   outline-color: var(--color-secondary-1);
   outline-offset: 2px;
 }
 
-button:active {
+button:active:enabled {
   background-color: var(--color-primary-2);
   outline-color: var(--color-primary-2);
   outline-style: dotted;
+}
+
+button:disabled {
+  background-color: var(--color-highlight-1);
+  outline: 2px solid var(--color-highlight-1);
+  color: #bbbdbc;
 }
 
 .page__title {

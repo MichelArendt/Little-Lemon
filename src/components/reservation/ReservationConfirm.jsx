@@ -1,3 +1,4 @@
+import React from 'react';
 import { useReservation } from "./ReservationContext";
 
 export default function ReservationConfirm() {

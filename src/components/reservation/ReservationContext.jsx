@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-import ReservationUtil from "@/utils/ReservationUtil";
+import ReservationUtil from "../../utils/ReservationUtil";
 
 const ReservationContext = createContext(undefined);
 

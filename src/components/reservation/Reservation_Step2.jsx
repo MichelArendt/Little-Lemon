@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Formik, Form, Field } from 'formik';
 
 import { useReservation } from "./ReservationContext";
@@ -31,6 +31,7 @@ export default function Reservation_Step2 ({setStep}) {
 
     const [firstName, setFirstName] = useState(reservation.firstName);
     const [lastName, setLastName] = useState(reservation.lastName);
+    const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
 
     const handleFirstNameChange = (e) => {
         setFirstName(e.target.value);
@@ -40,6 +41,14 @@ export default function Reservation_Step2 ({setStep}) {
     const handleLastNameChange = (e) => {
         setLastName(e.target.value);
         reservation.lastName = e.target.value;
+    }
+
+    const handleSubmit = (values) => {
+        reservation.firstName = values.firstName;
+        reservation.lastName = values.lastName;
+        reservation.email = values.email;
+        setStep(3);
+        window.scrollTo(0, 0);
     }
 
     return(
@@ -70,16 +79,10 @@ export default function Reservation_Step2 ({setStep}) {
                     }}
                     onSubmit={values => {
                         // same shape as initial values
-                        console.log('FORM: ' + values.email);
-                        reservation.firstName = values.firstName;
-                        reservation.lastName = values.lastName;
-                        reservation.email = values.email;
-                        console.log('email: ' + reservation.email);
-                        setStep(3);
-                        window.scrollTo(0, 0);
+                        handleSubmit(values);
                     }}
                 >
-                    {({ errors, touched, isValidating }) => (
+                    {({ dirty, errors, touched, isValid }) => (
                         <Form>
                             <p>
                                 Please fill out the rest of the details:
@@ -93,8 +96,6 @@ export default function Reservation_Step2 ({setStep}) {
                                     id="firstName"
                                     className="text--section-categories"
                                     placeholder="Your first name"
-                                    // value={firstName}
-                                    // onChange={handleFirstNameChange}
                                     validate={validateName}
                                 />
                                 {errors.firstName && touched.firstName ? (
@@ -110,8 +111,6 @@ export default function Reservation_Step2 ({setStep}) {
                                     id="lastName"
                                     placeholder="Your last name"
                                     className="text--section-categories"
-                                    // value={lastName}
-                                    // onChange={handleLastNameChange}
                                     validate={validateName}
                                 />
                                 {errors.lastName && touched.lastName ? (
@@ -122,11 +121,15 @@ export default function Reservation_Step2 ({setStep}) {
                             <section className="form__input-container">
                                 <label htmlFor="email" className="text--section-title">Email:</label>
 
-                                <Field name="email" type="email" validate={validateEmail} />
+                                <Field 
+                                    name="email" 
+                                    type="email" 
+                                    validate={validateEmail} 
+                                />
                                 {errors.email && touched.email ? <div className="form__error">{errors.email}</div> : null}
                             </section>
 
-                            <button type="submit">Confirm Reservation!</button>
+                            <button type="submit" disabled={!(isValid && dirty)}>Confirm Reservation!</button>
                         </Form>
                     )}
                 </Formik>
