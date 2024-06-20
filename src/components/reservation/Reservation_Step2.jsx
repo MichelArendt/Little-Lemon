@@ -19,7 +19,7 @@ function validateName(value) {
 function validateEmail(value) {
     let error;
     if (!value) {
-        error = 'Required';
+        error = 'Required!';
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
         error = 'Invalid email address';
     }
@@ -104,13 +104,13 @@ export default function Reservation_Step2 ({setStep}) {
                             </section>
 
                             <section className="form__input-container">
-                                <label htmlFor="last-name" className="text--section-title">Last name:</label>
+                                <label htmlFor="lastName" className="text--section-title">Last name:</label>
 
                                 <Field
                                     name="lastName"
                                     id="lastName"
-                                    placeholder="Your last name"
                                     className="text--section-categories"
+                                    placeholder="Your last name"
                                     validate={validateName}
                                 />
                                 {errors.lastName && touched.lastName ? (
@@ -123,7 +123,9 @@ export default function Reservation_Step2 ({setStep}) {
 
                                 <Field 
                                     name="email" 
+                                    id="email"
                                     type="email" 
+                                    placeholder="your@email.com"
                                     validate={validateEmail} 
                                 />
                                 {errors.email && touched.email ? <div className="form__error">{errors.email}</div> : null}
