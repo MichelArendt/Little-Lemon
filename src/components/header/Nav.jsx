@@ -19,14 +19,12 @@ export default function Nav(){
         setMenuState(MenuState.OPEN);
         setMenuLinksClass(MenuLinksClass.VISIBLE);
         menuButton.current.innerText = 'menu_open';
-        console.log('setMenuOpen')
     }
 
     const setMenuDefault = () => {
         setMenuState(MenuState.DEFAULT);
         setMenuLinksClass(MenuLinksClass.HIDDEN);
         menuButton.current.innerText = 'menu';
-        console.log('setMenuDefault')
     }
 
     const toggleMenu = () => {

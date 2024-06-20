@@ -19,9 +19,6 @@ export default function Reservation_Step1 ({setStep}) {
             console.log(date)
             reservation.setReservationDateFromFormOnChange(date);
             setSelectedDate(date);
-        } else {
-            // INVALID TIME
-            console.log(e.target)
         }
     };
 
