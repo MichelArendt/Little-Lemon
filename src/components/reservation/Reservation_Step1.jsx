@@ -12,7 +12,7 @@ export default function Reservation_Step1 ({setStep}) {
     const [selectedDate, setSelectedDate] = useState( reservation.dateToInputString(reservation.dateSelected) );
     const [selectedTime, setSelectedTime] = useState(reservation.timeSelected);
     const [selectedGuests, setSelectedGuests] = useState(reservation.guestsSelected);
-    
+
     const handleDateChange = (e) => {
         const date = e.target.value;
 
@@ -48,7 +48,7 @@ export default function Reservation_Step1 ({setStep}) {
             console.error('Error fetching data:', error);
         }
     };
-    
+
     useEffect(() => {
         fetchData(new Date());
     }, []);
@@ -90,11 +90,11 @@ export default function Reservation_Step1 ({setStep}) {
 
                 <section className="form__input-container">
                     <label htmlFor="reservation-time" className="text--section-title">Pick a time:</label>
-                    
-                    <select 
-                        name="reservation-time" 
-                        id="reservation-time" 
-                        className="text--section-categories" 
+
+                    <select
+                        name="reservation-time"
+                        id="reservation-time"
+                        className="text--section-categories"
                         value={selectedTime}
                         onChange={handleTimeChange}
                     >
@@ -106,11 +106,11 @@ export default function Reservation_Step1 ({setStep}) {
 
                 <section className="form__input-container">
                     <label htmlFor="reservation-time" className="text--section-title">Number of guests:</label>
-                    
-                    <select 
-                        name="reservation-time" 
-                        id="reservation-time" 
-                        className="text--section-categories" 
+
+                    <select
+                        name="reservation-time"
+                        id="reservation-time"
+                        className="text--section-categories"
                         value={selectedGuests}
                         onChange={handleGuestChange}
                     >

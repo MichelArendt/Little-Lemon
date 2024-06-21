@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Formik, Form, Field } from 'formik';
 
 import { useReservation } from "./ReservationContext";
@@ -31,25 +31,37 @@ export default function Reservation_Step2 ({setStep}) {
 
     const [firstName, setFirstName] = useState(reservation.firstName);
     const [lastName, setLastName] = useState(reservation.lastName);
-    const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
+    const [submitResult, setSubmitResult] = useState(null);
 
-    const handleFirstNameChange = (e) => {
-        setFirstName(e.target.value);
-        reservation.firstName = e.target.value;
-    }
+    // const handleFirstNameChange = (e) => {
+    //     setFirstName(e.target.value);
+    //     reservation.firstName = e.target.value;
+    // }
 
-    const handleLastNameChange = (e) => {
-        setLastName(e.target.value);
-        reservation.lastName = e.target.value;
-    }
+    // const handleLastNameChange = (e) => {
+    //     setLastName(e.target.value);
+    //     reservation.lastName = e.target.value;
+    // }
 
-    const handleSubmit = (values) => {
+    const handleSubmit = async (values) => {
         reservation.firstName = values.firstName;
         reservation.lastName = values.lastName;
         reservation.email = values.email;
-        setStep(3);
-        window.scrollTo(0, 0);
+
+        try {
+            setSubmitResult( await window.submitAPI(reservation) );
+        } catch (error) {
+            console.error('Error confirming reservation:', error);
+        }
     }
+
+    useEffect(() => {
+        if( submitResult )
+        {
+            setStep(3);
+            window.scrollTo(0, 0);
+        }
+    }, [submitResult]);
 
     return(
         <>

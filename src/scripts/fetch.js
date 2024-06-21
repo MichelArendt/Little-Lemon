@@ -22,6 +22,6 @@ window.fetchAPI = function(date) {
     return result;
 };
 
-const submitAPI = function(formData) {
+window.submitAPI = function(formData) {
     return true;
 };
