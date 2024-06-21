@@ -4,8 +4,9 @@ import { useReservation } from "./ReservationContext";
 import Button from '../Button'
 
 export default function Reservation_Step1 ({setStep}) {
-    // const [ loading, setLoading ] = useState(false);
     const { reservation, setReservation } = useReservation();
+    const [availableDates, setAvailableDates] = useState([]);
+    const [ result, setResult ] = useState(null);
 
     // Use local states to trigger re-render when values change
     const [selectedDate, setSelectedDate] = useState( reservation.dateToInputString(reservation.dateSelected) );
@@ -16,9 +17,9 @@ export default function Reservation_Step1 ({setStep}) {
         const date = e.target.value;
 
         if ( reservation.isDateValid(date) ){
-            console.log(date)
             reservation.setReservationDateFromFormOnChange(date);
             setSelectedDate(date);
+            fetchData(reservation.dateSelected);
         }
     };
 
@@ -32,13 +33,34 @@ export default function Reservation_Step1 ({setStep}) {
         const guests = e.target.value;
         reservation.setGuestsFromFormOnChange(guests);
         setSelectedGuests(guests);
-        console.log(reservation.guestsSelected)
     }
 
     const checkAvailability = (e) => {
         setStep(2);
         window.scrollTo(0, 0);
     }
+
+    const fetchData = async (date) => {
+        try {
+            const data = await window.fetchAPI(date);
+            setResult(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+    
+    useEffect(() => {
+        fetchData(new Date());
+    }, []);
+
+    useEffect(() => {
+        if (Array.isArray(result)) {
+            setAvailableDates(result);
+            setSelectedTime(result[0]); // Set default selected time to the first available date
+            if (!selectedTime && result.length > 0) {
+            }
+        }
+    }, [result]);
 
     return(
         <>
@@ -76,17 +98,9 @@ export default function Reservation_Step1 ({setStep}) {
                         value={selectedTime}
                         onChange={handleTimeChange}
                     >
-                        <option value="18:00">18:00</option>
-                        <option value="18:30">18:30</option>
-                        <option value="19:00">19:00</option>
-                        <option value="19:30">19:30</option>
-                        <option value="20:00">20:00</option>
-                        <option value="20:30">20:30</option>
-                        <option value="21:00">21:00</option>
-                        <option value="21:30">21:30</option>
-                        <option value="22:00">22:00</option>
-                        <option value="22:30">22:30</option>
-                        <option value="23:00">23:00</option>
+                        {availableDates && availableDates.map((date, index) => (
+                            <option key={index} value={date}>{date}</option>
+                        ))}
                     </select>
                 </section>
 
