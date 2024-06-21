@@ -1,7 +1,9 @@
 
 # Little Lemon Booking Application
 
-This project was created during Meta's Coursera Front-End Development course as the culmination of the Front-End Development Track. The project involves implementing a booking application for the Little Lemon Website using React components, showcasing the understanding and utilization of React for web devel## Features
+This project was created during Meta's Coursera Front-End Development course as the culmination of the Front-End Development Track. The project involves implementing a booking application for the Little Lemon Website using React components, showcasing the understanding and utilization of React for web development.
+
+## Features
 
 -   **React Components**: Demonstrates the use of React for building a dynamic and responsive web application.
 -   **API Calls**: Incorporates API calls to interact with backend services.
